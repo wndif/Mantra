@@ -27,7 +27,7 @@ class Node(object):
         pass
 
     def show(self, buf=sys.stdout, offset=0, attrnames=False, showlineno=True):
-        indent = 2
+        indent = 1
         lead = ' ' * offset
 
         buf.write(lead + self.__class__.__name__ + ': ')
