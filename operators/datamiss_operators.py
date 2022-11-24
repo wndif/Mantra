@@ -10,7 +10,7 @@ import utils.mutation_utils as mu
 def operator_add_bias(model):
 
     if not model:
-        print("raise,log we have probllems")
+        print("raise: log we have probllems")
 
     current_index = props.add_bias["current_index"]
 
