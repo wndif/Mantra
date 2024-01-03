@@ -8,7 +8,7 @@
 
 * PyVerilog 1.2.1
 
-    pip3 install pyverilog==1.2.1
+    pip3 install pyverilog==1.2.1 <br />
     Make sure to replace source files for PyVerilog to support Mantra (see documentaiton in /pyverilog_changes)
 * Icarus Verilog
 
