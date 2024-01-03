@@ -16,4 +16,4 @@
 
 
 # **License**
-* This repository is licensed under  
+* This repository is licensed under MIT license. See () for details. 
