@@ -16,4 +16,4 @@
 
 
 # **License**
-* This repository is licensed under MIT license. See () for details. 
+* This repository is licensed under MIT license. See [LICENSE](https://github.com/wndif/Mantra/blob/main/LICENSE) for details. 
