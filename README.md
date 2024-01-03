@@ -1,4 +1,4 @@
-##DAC2023--Mantra: Mutation Testing of Hardware Design Code Based on Real Bugs
+*DAC2023--Mantra: Mutation Testing of Hardware Design Code Based on Real Bugs*
 * J. Wu et al., "Mantra: Mutation Testing of Hardware Design Code Based on Real Bugs," 2023 60th ACM/IEEE Design Automation Conference (DAC), San Francisco, CA, USA, 2023, pp. 1-6, doi: 10.1109/DAC56929.2023.10247962.
 
 ##Dependencies
