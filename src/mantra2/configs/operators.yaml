@@ -1,0 +1,24 @@
+schema_version: '1.0'
+operator_count: 19
+implementation_schema_count: 22
+operators:
+  ExprUpdate: {family: Expression, schemas: [ExprUpdate]}
+  ExprInsert: {family: Expression, schemas: [ExprInsert]}
+  ExprDelete: {family: Expression, schemas: [ExprDelete]}
+  PartselectUpdate: {family: Bit-vector and access, schemas: [PartselectUpdate]}
+  PartselectInsert: {family: Bit-vector and access, schemas: [PartselectInsert]}
+  PartselectDelete: {family: Bit-vector and access, schemas: [PartselectDelete]}
+  PointerUpdate: {family: Bit-vector and access, schemas: [PointerUpdate]}
+  PointerInsert: {family: Bit-vector and access, schemas: [PointerInsert]}
+  PointerDelete: {family: Bit-vector and access, schemas: [PointerDelete]}
+  NSubUpdate: {family: Assignment, schemas: [NSubUpdate]}
+  NSubInsert: {family: Assignment, schemas: [NSubInsert, NSubInsert_IF, NSubInsert_Case]}
+  NSubDelete: {family: Assignment, schemas: [NSubDelete]}
+  NSubMove: {family: Assignment, schemas: [NSubMove]}
+  AssignN2B: {family: Assignment, schemas: [AssignN2B]}
+  AssignB2N: {family: Assignment, schemas: [AssignB2N]}
+  EdgeFlip: {family: Timing, schemas: [EdgeFlip]}
+  EdgeInsert: {family: Timing, schemas: [EdgeInsert]}
+  EdgeDelete: {family: Timing, schemas: [EdgeDelete]}
+  IOFlip: {family: Port, schemas: [IOFlip1, IOFlip2]}
+

@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.venv/
+venv/
+
+# Mantra2 output
+mantra/
+work/
+mutants.csv
+candidate_results.csv
+
+# Simulation artefacts
+simv
+simv.exe
+simv.out
+*.vcd
+*.fsdb
+*.vdb/
+*.daidir/
+csrc/
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

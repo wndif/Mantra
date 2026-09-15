@@ -1,0 +1,9 @@
+# Normalise line endings so that clones behave the same on every platform.
+* text=auto eol=lf
+
+*.v text eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf

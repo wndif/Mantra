@@ -1,0 +1,26 @@
+# Keep the build context lean and avoid leaking host state into the image.
+.venv/
+.venv
+.git/
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# Generated artefacts that should never be baked into the image.
+examples/mantra/
+work/
+tmp/
+tmp_*/
+*.csv.tmp
+
+# Local smoke-test scratch (host only).
+/tmp/
+
+# Editor / OS noise.
+.idea/
+.vscode/
+.DS_Store

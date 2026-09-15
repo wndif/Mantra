@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+
+      - name: Install Mantra2
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[mutation,test]"
+
+      - name: Apply the bundled PyVerilog patch
+        run: mantra2 setup-pyverilog --yes
+
+      - name: Test
+        run: pytest -q
+
+      - name: Smoke test the CLI
+        run: |
+          mantra2 list-operators
+          mantra2 mutate --source examples/counter.v --root examples --out /tmp/mantra
+          test -f /tmp/mantra/mutants.csv
+
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+
+      - name: Install Mantra2
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[mutation,test]"
+
+      - name: Apply the bundled PyVerilog patch
+        run: mantra2 setup-pyverilog --yes
+
+      - name: Mutate and evaluate
+        run: |
+          mantra2 mutate --source examples/counter.v --root examples --out examples/mantra
+          mantra2 evaluate \
+            --source examples/counter.v \
+            --root examples \
+            --testbench examples/counter_tb.v \
+            --manifest examples/mantra/mutants.csv \
+            --backend iverilog \
+            --work-dir work
+          cat work/candidate_results.csv

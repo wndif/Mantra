@@ -1,0 +1,201 @@
+
+patterns:
+  PointerUpdate:
+    OPClass: PointerUpdate
+    pattern:
+      - class_name: Pointer
+      - class_name: IntConst
+    rates: 0.1
+
+  PointerInsert:
+    OPClass: PointerInsert
+    pattern:
+      - class_name: Identifier
+    rates: 0.1
+
+  PointerDelete:
+    OPClass: PointerDelete
+    pattern:
+      - class_name: Pointer
+    rates: 0.1
+
+  PartselectUpdate:
+    OPClass: PartselectUpdate
+    pattern:
+      - class_name: Partselect
+      - class_name: IntConst
+    rates: 0.1
+
+  PartselectInsert:
+    OPClass: PartselectInsert
+    pattern:
+      - class_name: Identifier
+    rates: 0.1
+
+  PartselectDelete:
+    OPClass: PartselectDelete
+    pattern:
+      - class_name: Partselect
+    rates: 0.1
+#
+#  InfixExpr:
+#    OPClass: ExprUpdate
+#    pattern:
+#      - class_name: Operator
+#
+#    rates: 0.1
+#
+#  InfixExprIFC:
+#    OPClass: ExprUpdate
+#    pattern:
+#      - class_name: IfStatement
+#      - class_name: Operator
+#
+#    rates: 0.1
+
+#  PreExprUpdate:
+#    OPClass: ExprUpdate
+#    pattern:
+#      - class_name: UnaryOperator
+#
+#    rates: 0.1
+#
+#  PreExprUpdateIFC:
+#    OPClass: ExprUpdate
+#    pattern:
+#      - class_name: IfStatement
+#      - class_name: UnaryOperator
+#    rates: 0.1
+
+  ExprInsert:
+    OPClass: ExprInsert
+    pattern:
+      - class_name: Operator
+    rates: 0.1
+
+  ExprDelete:
+    OPClass: ExprDelete
+    pattern:
+      - class_name: Operator
+    rates: 0.1
+
+  ExprUpdate:
+    OPClass: ExprUpdate
+    pattern:
+      - class_name: Operator
+    rates: 0.1
+
+  NSubUpdate:
+    OPClass: NSubUpdate
+    pattern:
+      - class_name: Always
+      - class_name: NonblockingSubstitution
+    rates: 0.2
+
+#  NSubUpdate_Case:
+#    OPClass: NSubUpdate
+#    pattern:
+#      - class_name: Case
+#      - class_name: NonblockingSubstitution
+#    rates: 0.2
+#
+#  NSubUpdate_IF:
+#    OPClass: NSubUpdate
+#    pattern:
+#      - class_name: IfStatement
+#      - class_name: NonblockingSubstitution
+#    rates: 0.2
+
+  NSubDelete:
+    OPClass: NSubDelete
+    pattern:
+      - class_name: Always
+      - class_name: NonblockingSubstitution
+
+    rates: 0.1
+
+  NSubInsert:
+    OPClass: NSubInsert
+    pattern:
+      - class_name: Always
+      - class_name: Block
+    rates: 0.1
+
+  NSubInsert_Case:
+    OPClass: NSubInsert_Case
+    pattern:
+      - class_name: Case
+
+    rates: 0.1
+
+  NSubInsert_IF:
+    OPClass: NSubInsert_IF
+    pattern:
+      - class_name: IfStatement
+
+    rates: 0.1
+
+  NSubMove:
+    OPClass: NSubMove
+    pattern:
+      - class_name: IfStatement
+
+    rates: 0.1
+
+  AssignB2N:
+    OPClass: AssignB2N
+    pattern:
+      - class_name: BlockingSubstitution
+
+    rates: 0.1
+
+  AssignN2B:
+    OPClass: AssignN2B
+    pattern:
+      - class_name: NonblockingSubstitution
+
+    rates: 0.1
+#  IFC:
+#    OPClass: IFC
+#    pattern:
+#      - class_name: IfStatement
+#      - class_name: UnaryOperator
+#    rates: 0.2
+
+  IOFlip1:
+    OPClass: IOFlip1
+    pattern:
+      - class_name: Input
+    rates: 0.2
+
+  IOFlip2:
+    OPClass: IOFlip2
+    pattern:
+      - class_name: Output
+    rates: 0.2
+
+  EdgeFlip:
+    OPClass: EdgeFlip
+    pattern:
+      - class_name: Always
+      - class_name: SensList
+      - class_name: Sens
+    rates: 0.2
+
+  EdgeInsert:
+    OPClass: EdgeInsert
+    pattern:
+      - class_name: Always
+      - class_name: SensList
+    rates: 0.2
+
+  EdgeDelete:
+    OPClass: EdgeDelete
+    pattern:
+      - class_name: Always
+      - class_name: SensList
+#      - class_name: Sens
+    rates: 0.2
+
+
+

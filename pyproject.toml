@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mantra2"
+version = "0.1.0"
+description = "Mutation testing of Verilog hardware design code for a single project"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+keywords = ["verilog", "mutation-testing", "rtl", "hardware", "fault-injection"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+  "Topic :: Software Development :: Testing",
+]
+authors = [
+  {name = "Xiankai Meng"},
+  {name = "Kejian Feng"},
+  {name = "Xinlin Zhao"},
+  {name = "Zhuo Zhang"},
+  {name = "Yan Lei"},
+  {name = "Xiaoguang Mao"},
+  {name = "Jiang Wu"},
+]
+dependencies = ["PyYAML>=6.0,<7"]
+
+[project.optional-dependencies]
+mutation = ["pyverilog==1.2.1"]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/wndif/Mantra"
+"Bug Tracker" = "https://github.com/wndif/Mantra/issues"
+
+[project.scripts]
+mantra2 = "mantra2.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mantra2 = ["vendor/pyverilog_patch/*", "configs/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
